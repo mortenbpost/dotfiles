@@ -60,12 +60,12 @@
     ],
     
     "vim.insertModeKeyBindings": [
-      { "before": ["j", "j"], "after": ["<Esc>"] },
+      { "before": ["j", "j"], "after": ["<Esc>"] }
     ],
      
     "vim.visualModeKeyBindings": [
       { "before": ["<"], "commands": ["editor.action.outdentLines"] },
       { "before": [">"], "commands": ["editor.action.indentLines"] },
       { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
-    ],
+    ]
   }
