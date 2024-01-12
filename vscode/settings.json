@@ -1,71 +1,69 @@
 {
-    "workbench.colorTheme": "Material Theme Darker High Contrast",
-    "workbench.iconTheme": "eq-material-theme-icons",
-
-    "editor.fontFamily": "Fira Code",
-    "editor.fontSize": 14,
-    "editor.fontLigatures": true,
-    "editor.lineNumbers": "relative",
-    "editor.accessibilitySupport": "off",
-    "editor.minimap.enabled": false,
-
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "files.autoSave": "afterDelay",
-    "[python]": {
-      "editor.defaultFormatter": "ms-python.black-formatter"
-    },
-    "files.exclude": {
-      "**/__pycache__": true
-    },
-    "workbench.tree.enableStickyScroll": true,
-    "notebook.stickyScroll.enabled": true,
-    "remote.autoForwardPortsSource": "hybrid",
-    "autoDocstring.docstringFormat": "numpy",
-    "jupyter.interactiveWindow.textEditor.executeSelection": true,
-    
-    "vim.leader": "<space>",
-    "vim.hlsearch": true,
-    "vim.useSystemClipboard": true,
+  "workbench.colorTheme": "GitHub Dark Default",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.accessibilitySupport": "off",
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "files.autoSave": "afterDelay",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  "workbench.tree.enableStickyScroll": true,
+  "notebook.stickyScroll.enabled": true,
+  "remote.autoForwardPortsSource": "hybrid",
+  "autoDocstring.docstringFormat": "numpy",
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
   
-    "vim.normalModeKeyBindingsNonRecursive": [
-      { "before": ["<S-h>"], "commands": [":bprevious"] },
-      { "before": ["<S-l>"], "commands": [":bnext"] },
-      { "before": ["leader", "v"], "commands": [":vsplit"] },
-      { "before": ["leader", "s"], "commands": [":split"] },
-      {
-        "before": ["leader", "h"],
-        "commands": ["workbench.action.focusLeftGroup"]
-      },
-      {
-        "before": ["leader", "j"],
-        "commands": ["workbench.action.focusBelowGroup"]
-      },
-      {
-        "before": ["leader", "k"],
-        "commands": ["workbench.action.focusAboveGroup"]
-      },
-      {
-        "before": ["leader", "l"],
-        "commands": ["workbench.action.focusRightGroup"]
-      },
+  "vim.leader": "<space>",
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+
+    { "before": ["leader", "f"], "commands": ["editor.action.formatDocument"] },
+    // nice - type # to quickly go to a symbol in workspace...
+    { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    { "before": ["leader", "q", "f"], "commands": ["editor.action.quickFix"] },
+    { "before": ["leader", "r"], "commands": ["editor.action.rename"]}
+  ],
   
-      { "before": ["leader", "f"], "commands": ["editor.action.formatDocument"] },
-      // nice - type # to quickly go to a symbol in workspace...
-      { "before": ["leader", "e"], "commands": ["workbench.action.quickOpen"] },
-      {
-        "before": ["g", "h"],
-        "commands": ["editor.action.showDefinitionPreviewHover"]
-      },
-      { "before": ["leader", "q", "f"], "commands": ["editor.action.quickFix"] }
-    ],
-    
-    "vim.insertModeKeyBindings": [
-      { "before": ["j", "j"], "after": ["<Esc>"] }
-    ],
-     
-    "vim.visualModeKeyBindings": [
-      { "before": ["<"], "commands": ["editor.action.outdentLines"] },
-      { "before": [">"], "commands": ["editor.action.indentLines"] },
-      { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
-    ]
-  }
+  "vim.insertModeKeyBindings": [
+    { "before": ["j", "j"], "after": ["<Esc>"] },
+  ],
+   
+  "vim.visualModeKeyBindings": [
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ]
+}
