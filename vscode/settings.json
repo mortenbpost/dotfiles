@@ -14,8 +14,6 @@
   "files.exclude": {
     "**/__pycache__": true
   },
-  "workbench.tree.enableStickyScroll": true,
-  "notebook.stickyScroll.enabled": true,
   "remote.autoForwardPortsSource": "hybrid",
   "autoDocstring.docstringFormat": "numpy",
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
@@ -46,24 +44,37 @@
       "commands": ["workbench.action.focusRightGroup"]
     },
 
-    { "before": ["leader", "f"], "commands": ["editor.action.formatDocument"] },
+    { "before": ["leader", "f"], "commands": ["editor.action.organizeImports", "editor.action.formatDocument"] },
     // nice - type # to quickly go to a symbol in workspace...
-    { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
+    { "before": ["<C-p>"], "commands": ["workbench.action.quickOpen"] },
     {
       "before": ["g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
     },
     { "before": ["leader", "q", "f"], "commands": ["editor.action.quickFix"] },
-    { "before": ["leader", "r"], "commands": ["editor.action.rename"]}
+    { "before": ["leader", "r"], "commands": ["editor.action.rename"]},
+    { "before": ["C-d"], "after": ["C-d", "z", "z"]},
+    { "before": ["C-u"], "after": ["C-u", "z", "z"]}, 
+
+    { "before": ["]", "d"], "commands": ["editor.action.marker.next"] },
+    { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] }
   ],
   
-  "vim.insertModeKeyBindings": [
-    { "before": ["j", "j"], "after": ["<Esc>"] },
-  ],
-   
   "vim.visualModeKeyBindings": [
     { "before": ["<"], "commands": ["editor.action.outdentLines"] },
     { "before": [">"], "commands": ["editor.action.indentLines"] },
     { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
-  ]
+  ],
+  "vim.otherModesKeyBindings": [
+    { "before": ["u"], "commands": "undo"},
+    { "before": ["<C-r>"], "commands": "redo"}
+  ],
+  "vim.insertModeKeyBindings": [
+    { "before": ["j", "j"], "after": ["<Esc>"] }
+  ],
+  "isort.args": [
+    "--profile",
+    "black"
+  ],
+  "editor.stickyScroll.enabled": false,
 }
