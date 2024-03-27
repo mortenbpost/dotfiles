@@ -1,22 +1,31 @@
 {
   "workbench.colorTheme": "GitHub Dark Default",
+
   "editor.fontFamily": "Fira Code",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.accessibilitySupport": "off",
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
+  "editor.stickyScroll.enabled": false,
+
   "terminal.integrated.defaultProfile.linux": "zsh",
   "files.autoSave": "afterDelay",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
+  "isort.args": [ "--profile", "black" ],
   "files.exclude": {
     "**/__pycache__": true
   },
   "remote.autoForwardPortsSource": "hybrid",
   "autoDocstring.docstringFormat": "numpy",
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
+
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.toggleSidebarVisibility",
+    "workbench.action.quickOpen"
+  ],
   
   "vim.leader": "<space>",
   "vim.hlsearch": true,
@@ -27,35 +36,17 @@
     { "before": ["<S-l>"], "commands": [":bnext"] },
     { "before": ["leader", "v"], "commands": [":vsplit"] },
     { "before": ["leader", "s"], "commands": [":split"] },
-    {
-      "before": ["leader", "h"],
-      "commands": ["workbench.action.focusLeftGroup"]
-    },
-    {
-      "before": ["leader", "j"],
-      "commands": ["workbench.action.focusBelowGroup"]
-    },
-    {
-      "before": ["leader", "k"],
-      "commands": ["workbench.action.focusAboveGroup"]
-    },
-    {
-      "before": ["leader", "l"],
-      "commands": ["workbench.action.focusRightGroup"]
-    },
-
+    { "before": ["leader", "h"], "commands": ["workbench.action.focusLeftGroup"] },
+    { "before": ["leader", "j"], "commands": ["workbench.action.focusBelowGroup"] },
+    { "before": ["leader", "k"], "commands": ["workbench.action.focusAboveGroup"] },
+    { "before": ["leader", "l"], "commands": ["workbench.action.focusRightGroup"] },
     { "before": ["leader", "f"], "commands": ["editor.action.organizeImports", "editor.action.formatDocument"] },
-    // nice - type # to quickly go to a symbol in workspace...
     { "before": ["<C-p>"], "commands": ["workbench.action.quickOpen"] },
-    {
-      "before": ["g", "h"],
-      "commands": ["editor.action.showDefinitionPreviewHover"]
-    },
+    { "before": ["g", "h"], "commands": ["editor.action.showDefinitionPreviewHover"] },
     { "before": ["leader", "q", "f"], "commands": ["editor.action.quickFix"] },
     { "before": ["leader", "r"], "commands": ["editor.action.rename"]},
     { "before": ["C-d"], "after": ["C-d", "z", "z"]},
     { "before": ["C-u"], "after": ["C-u", "z", "z"]}, 
-
     { "before": ["]", "d"], "commands": ["editor.action.marker.next"] },
     { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] }
   ],
@@ -71,10 +62,5 @@
   ],
   "vim.insertModeKeyBindings": [
     { "before": ["j", "j"], "after": ["<Esc>"] }
-  ],
-  "isort.args": [
-    "--profile",
-    "black"
-  ],
-  "editor.stickyScroll.enabled": false,
+  ]
 }
