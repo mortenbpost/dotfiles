@@ -1,12 +1,101 @@
 // Place your key bindings in this file to override the defaults
 [
+    // Copilot
     {
-        "command": "workbench.action.toggleSidebarVisibility",
-        "key": "ctrl+b"
+        "key": "ctrl+i",
+        "when": "editorTextFocus && vim.active && vim.use<C-i> && !inDebugRepl && vim.mode == 'Normal'",
+        "command": "extension.vim_ctrl+i"
     },
     {
-        "command": "workbench.action.toggleSidebarVisibility",
-        "key": "ctrl+b", 
-        "When": "editorTextFocus || terminalFocus"
+        "key": "ctrl+i",
+        "when": "editorTextFocus && vim.active && vim.use<C-i> && !inDebugRepl",
+        "command": "-extension.vim_ctrl+i"
     },
+    // Navigate
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.focusBelowGroup",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.focusAboveGroup",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusLeftGroup",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusRightGroup",
+        "when": "vim.mode == 'Normal' && editorTextFocus"
+    },
+    {
+        "key": "ctrl+b",
+        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.files.action.focusFilesExplorer"
+            ]
+        }
+    },
+    {
+        "key": "ctrl+b",
+        "when": "sideBarFocus && !inputFocus",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        }
+    },
+    {
+        "key": "ctrl+b",
+        "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    // Edit
+    {
+        "key": "space v",
+        "when": "vim.mode == 'Normal' && editorTextFocus",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.splitEditorRight",
+                "workbench.action.focusPreviousGroup",
+                "workbench.action.closeActiveEditor"
+            ]
+        }
+    },
+    {
+        "key": "space f",
+        "when": "vim.mode == 'Normal' && editorTextFocus",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "editor.action.formatDocument",
+                "editor.action.organizeImports"
+            ]
+        }
+    },
+    {
+        "key": "space c",
+        "when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine') && editorTextFocus",
+        "command": "editor.action.commentLine",
+    },
+    {
+        "key": "space r",
+        "when": "vim.mode == 'Normal' && editorTextFocus",
+        "command": "editor.action.rename",
+    },
+    {
+        "key": "space z",
+        "when": "vim.mode == 'Normal' && editorTextFocus",
+        "command": "workbench.action.toggleZenMode"
+    }
 ]
