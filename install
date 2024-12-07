@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-[[ -z $STOW_FOLDERS ]] && STOW_FOLDERS=("zsh")
-
-for folder in $STOW_FOLDERS; do
-    stow -v -R -t $HOME $folder
-done
